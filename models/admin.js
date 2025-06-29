@@ -1,15 +1,17 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
-const Objectid = mongoose.Objectid;
+
 
 const admin = new Schema({
     email: {
-        type: string,
+        type: String,
         unique: true
     },
-    username: string,
-    password: string,
-    userId: ObjectId
+    username: String,
+    password: String,
+    userId: Schema.Types.ObjectId
 
 
 })
+const AdminModel = mongoose.model("admin", admin);
+module.export = AdminModel;

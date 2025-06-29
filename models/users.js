@@ -1,16 +1,16 @@
-const express = require('express')
-const router = express.Router();
-const users = require('../models/users');
-const jwt = require('jsonwebtoken')
-const JWT_SECRET = "secret";
-const bcrypt = require("bcrypt")
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema();
+const user = new Schema({
+    email: {
+        type: String,
+        unique: true
+    },
+    username: String,
+    password: String,
+    userId: Schema.Types.ObjectId
 
-router.use('/test', function(req, res) {
-    res.json("test sucesss");
+
 })
 
-
-
-
-
-module.exports = router;
+const UserModel = mongoose.model('user', user);
+module.exports(UserModel);
