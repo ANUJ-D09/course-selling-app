@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router();
 const Admin = require('../models/Admin');
 const jwt = require('jsonwebtoken')
-const JWT_SECRET = "secret";
+const JWT_SECRET = "ShreeJagnnath"
 const bcrypt = require("bcrypt")
 const z = require("zod")
 
