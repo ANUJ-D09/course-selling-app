@@ -41,9 +41,9 @@ const courseSchema = new Schema({
     coursename: String,
     coursedescription: String,
     courseprice: Number,
-    courseimage: String,
+
     imageurl: String,
-    Creatorid: {
+    userid: {
         type: ObjectId,
         ref: 'admin'
     }
