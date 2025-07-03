@@ -4,6 +4,7 @@ const users = require('../models/db');
 const jwt = require('jsonwebtoken')
 const JWT_SECRET = process.env.JWT_SECRET
 const bcrypt = require("bcrypt")
+const { studentauth } = require('../auth');
 
 
 
@@ -26,7 +27,7 @@ router.post('/signup', async function(req, res) {
 router.post('/signin', function(req, res) {
     res.json("test sucesss");
 })
-router.get('/course', function(req, res) {
+router.get('/course', studentauth, function(req, res) {
     res.json("test sucesss");
 })
 

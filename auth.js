@@ -28,6 +28,7 @@ function studentauth(req, res, next) {
     try {
         const decryptedToken = jwt.verify(token, JWT_SECRET);
         req.userid = decryptedToken.userid;
+        next()
     } catch (error) {
         console.error(error);
         res.status(400).json({ message: "expired token" })
@@ -35,5 +36,4 @@ function studentauth(req, res, next) {
     }
 }
 
-
-module.exports = facultyauth;
+module.exports = { facultyauth, studentauth };
