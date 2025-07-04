@@ -24,8 +24,10 @@ router.post('/signup', async function(req, res) {
 
 })
 
-router.post('/signin', function(req, res) {
+router.post('/signin', studentauth, function(req, res) {
     res.json("test sucesss");
+
+
 })
 router.get('/course', studentauth, function(req, res) {
     res.json("test sucesss");
